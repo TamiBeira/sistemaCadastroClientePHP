@@ -54,13 +54,11 @@
         $telefone= $_POST['telefone'];
         $email= $_POST['email'];
         $radio=@ $_POST['radio'];
-        $foto=@ $_POST['foto'];
 
-
-        $sql = $pdo->prepare('INSERT INTO `cliente` VALUES(null,?,?,?,?,?,?,?,?,?)');
-        $sql->execute(array($nome,$cpf,$endereco,$cidade,$estado,$telefone,$email,$radio,$foto));
+        $sql = $pdo->prepare('INSERT INTO `cliente` VALUES(null,?,?,?,?,?,?,?,?)');
+        $sql->execute(array($nome,$cpf,$endereco,$cidade,$estado,$telefone,$email,$radio));
         $sql->fetchAll();
-        
+
         echo '</br>';
         echo '<script>alert("Cadastro realizado com sucesso!");</script>';
         echo '</br>';
